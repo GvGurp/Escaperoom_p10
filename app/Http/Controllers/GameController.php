@@ -3,6 +3,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\WordCode;
+use App\Models\Score;
+use Illuminate\Support\Facades\Auth;
 
 class GameController extends Controller
 {
@@ -95,4 +97,25 @@ class GameController extends Controller
         $score = session('score', 0); // Get the player's score
         return view('game_end', ['score' => $score]); // Pass the score to the game_end view
     }
+
+    public function saveScore(Request $request)
+    {
+        // Validate incoming request (optional)
+        $request->validate([
+            'score' => 'required|integer',
+        ]);
+
+        // Get the authenticated user (if needed)
+        $userId = Auth::id();
+
+        // Create a new score entry
+        $score = new Score();
+        $score->user_id = $userId;
+        $score->level_id = 1; // Assuming Level 1
+        $score->points = $request->input('score');
+        $score->save();
+
+        return response()->json(['success' => true, 'message' => 'Score saved successfully.']);
+    }
+
 }

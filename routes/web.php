@@ -43,4 +43,4 @@ Route::get('/next-game', [GameController::class, 'nextWord'])->name('next-game')
 Route::get('/level1_woordcode/nextWord', [GameController::class, 'nextWord'])->name('game.nextWord');
 
 Route::get('/end-game', [GameController::class, 'endGame'])->name('game.end');
-
+Route::post('/save-score', [GameController::class, 'saveScore'])->name('save.score');

@@ -1,6 +1,4 @@
 <?php
-
-
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -10,15 +8,5 @@ class Score extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['user_id', 'score','level_id', 'time_taken'];
-
-    public function user()
-    {
-        return $this->belongsTo(User::class);
-    }
-
-    public function level()
-    {
-        return $this->belongsTo(Level::class);
-    }
+    protected $fillable = ['user_id', 'level_id', 'points']; // Ensure this matches what your migration expects
 }

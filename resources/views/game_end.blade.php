@@ -19,13 +19,16 @@
                 title: 'Game Over!',
                 html: `
                     <p>Your final score is <strong>${score}</strong>.</p>
-                    <p>What would you like to do next?</p>
+                    <p style="color: #fff; font-weight: bold;">Don't forget to save your score!</p>
                     <div style="margin-top: 20px; display: flex; justify-content: center; gap: 10px;">
                         <button id="restart-btn" style="padding: 10px 20px; background-color: #4CAF50; color: #fff; border: none; border-radius: 5px; cursor: pointer;">
                             Restart Game
                         </button>
                         <button id="next-level-btn" style="padding: 10px 20px; background-color: #2196F3; color: #fff; border: none; border-radius: 5px; cursor: pointer;">
                             Next Level
+                        </button>
+                        <button id="save-score-btn" style="padding: 10px 20px; background-color: #FF5722; color: #fff; border: none; border-radius: 5px; cursor: pointer;">
+                            Save Your Score
                         </button>
                     </div>
                 `,
@@ -42,6 +45,53 @@
                 }
                 if (e.target.id === 'next-level-btn') {
                     window.location.href = '{{ route("next-game") }}'; // Redirect to the next level
+                }
+                if (e.target.id === 'save-score-btn') {
+                    const score = {{ session('score', 0) }};
+                    fetch('{{ route("save.score") }}', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'X-CSRF-TOKEN': '{{ csrf_token() }}',
+                        },
+                        body: JSON.stringify({ score: score }),
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            // Show second popup after saving the score
+                            Swal.fire({
+                                title: 'Success!',
+                                html: `
+                                    <p>Your score has been saved.</p>
+                                    <div style="margin-top: 20px; display: flex; justify-content: center; gap: 10px;">
+                                        <button id="second-popup-restart-btn" style="padding: 10px 20px; background-color: #4CAF50; color: #fff; border: none; border-radius: 5px; cursor: pointer;">
+                                            Restart Game
+                                        </button>
+                                        <button id="second-popup-next-level-btn" style="padding: 10px 20px; background-color: #2196F3; color: #fff; border: none; border-radius: 5px; cursor: pointer;">
+                                            Next Level
+                                        </button>
+                                    </div>
+                                `,
+                                icon: 'success',
+                                showCancelButton: false,
+                                showConfirmButton: false,
+                                allowOutsideClick: false,
+                            });
+
+                            // Handle second popup button clicks
+                            document.addEventListener('click', (e) => {
+                                if (e.target.id === 'second-popup-restart-btn') {
+                                    window.location.href = '{{ route("game.index") }}'; // Redirect to restart the game
+                                }
+                                if (e.target.id === 'second-popup-next-level-btn') {
+                                    window.location.href = '{{ route("next-game") }}'; // Redirect to the next level
+                                }
+                            });
+                        } else {
+                            Swal.fire('Failed to save the score', '', 'error');
+                        }
+                    });
                 }
             });
         }
