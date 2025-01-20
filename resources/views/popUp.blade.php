@@ -1,53 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8"> <!-- Instellen van tekencodering (Gaby) -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsieve weergave op mobiele apparaten (Gaby) -->
-    <title>Word Game - Level 1</title> <!-- Titel van de pagina (Gaby) -->
-    <link rel="stylesheet" href="styles.css"> <!-- Verwijzing naar de externe stylesheet (Gaby) -->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> <!-- SweetAlert2 library voor mooie pop-ups (Gaby) -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Game - Level 1</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body style="background-color: #000; color: #fff; padding: 20px; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; font-family: Arial, sans-serif;">
-    <!-- Inline styling om de body te stylen (Gaby) -->
 
-    <h1>Level 1</h1> <!-- Titel van het level (Gaby) -->
-    <p>Form words from the given letters and complete this level.</p> <!-- Beschrijving van het doel van het spel (Gaby) -->
+    <h1>Level 1</h1>
+    <p>Form words from the given letters and complete this level.</p>
     <div id="game-area">
-        <!-- Spelinteracties worden hier geladen (Gaby) -->
+        <!-- Game interactions will be loaded here -->
     </div>
 
     <script>
         /**
-         * Functie om de introductie van het spel te tonen (Gaby)
+         * Function to show the game introduction
          */
         function showGameIntro() {
             Swal.fire({
-                title: 'Welcome to the Game!', <!-- Titel van de popup (Gaby) -->
+                title: 'Welcome to the Game!',
                 html: `
-                    <p>Welcome to the exciting word game! Before you begin, let's go through the rules:</p>
-                    <ul style="list-style-type: disc; padding-left: 20px;"> <!-- Opgesomde lijst van spelregels (Gaby) -->
-                        <li>You will have a set time to complete each level.</li> <!-- Regel over tijdslimiet (Gaby) -->
-                        <li>Use your skills to form words from the given letters.</li> <!-- Regel over het maken van woorden (Gaby) -->
-                        <li>Complete as many levels as you can!</li> <!-- Regel over het doel van het spel (Gaby) -->
+                    <p>Welcome to the exciting word game! Before you begin, please review the rules:</p>
+                    <ul style="list-style-type: disc; padding-left: 20px;">
+                        <li> <strong>   Finish </strong>as many words as possible.</li>
+                        <li>Each correct guess gives you  <strong>   100 points. </strong></li>
+                        <li>A wrong guess  <strong>   deducts 100 points</strong> from your score.</li>
+                        <li>Use the hints and guess as many words as you can!</li>
                     </ul>
+                   <strong>   <p>Good luck!</p> </strong>
                 `,
-                icon: 'info', <!-- Informatie-icoon in de popup (Gaby) -->
-                showCancelButton: false, <!-- Annuleerknop uitgeschakeld (Gaby) -->
-                confirmButtonText: 'Start the Game Now', <!-- Tekst van de bevestigingsknop (Gaby) -->
+                icon: 'info',
+                showCancelButton: false,
+                confirmButtonText: 'Start the Game Now',
             }).then((result) => {
-                if (result.isConfirmed) { <!-- Als de gebruiker op bevestigen klikt (Gaby) -->
-                    Swal.close(); <!-- Sluit de popup (Gaby) -->
-                    window.location.href = '{{ url('/level1_woordcode') }}'; <!-- Redirect naar level 1 (Gaby) -->
+                if (result.isConfirmed) {
+                    Swal.close();
+                    window.location.href = '{{ url('/level1_woordcode') }}';
                 }
             });
         }
 
         /**
-         * Eventlistener om ervoor te zorgen dat de functie wordt uitgevoerd
-         * zodra de DOM volledig is geladen (Gaby)
+         * Event listener to execute the function once the DOM is fully loaded
          */
         document.addEventListener('DOMContentLoaded', (event) => {
-            showGameIntro(); <!-- Aanroepen van de introductiefunctie (Gaby) -->
+            showGameIntro();
         });
     </script>
 </body>
