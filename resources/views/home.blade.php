@@ -1,8 +1,8 @@
-@extends ('layout.main_layout')@section('content')
+@extends ('layout.main_layout')
+@section('content')
     <div class="container mx-auto p-6">        <!-- Main Card -->
         <div class="bg-gray-800 text-white p-6 rounded-lg shadow-lg flex items-center">
-            <div class="w-1/3">                <!-- Placeholder for Image --> <img src="../public/images/download.jpg"
-                                                                                   alt=""></div>
+            <div class="w-1/3"><img src="../public/images/download.jpg" alt=""></div>
             <div class="ml-6"><h1 class="text-4xl font-bold">Welcome to My Laravel Project</h1>
                 <h2 class="text-2xl mt-4">Totoro, the friendly forest spirit, has wandered too deep into the woods and
                     now finds himself lost in a mysterious forest.<br> He needs your help to find his way back home! But

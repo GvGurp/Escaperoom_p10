@@ -1,6 +1,3 @@
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,12 +9,12 @@
 
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-[url(../public/images/blaadje.gif)] bg-cover bg-center h-screen">
+<body class="bg-[url(../../public/images/blaadje.gif)] bg-cover bg-center h-screen " >
 <nav class="border-gray-200 bg-slate-800 dark:bg-gray-800 dark:border-gray-700">
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <a href="{{ route('home') }}" class="flex items-center space-x-3 rtl:space-x-reverse">
-            <img src="../public/images/brightened_escape_room_logo.jpg" class="h-8" alt="Logo" />
-            <span class="self-center text-2xl font-mono whitespace-nowrap dark:text-white">escaperoom</span>
+            <img src="../../public/images/logo.jpg" class="h-12" alt="Logo" />
+            <span class="self-center text-2xl font-mono whitespace-nowrap text-white">escaperoom</span>
         </a>
         <button data-collapse-toggle="navbar-solid-bg" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-solid-bg" aria-expanded="false">
             <span class="sr-only">Open main menu</span>
@@ -62,7 +59,7 @@
                         </li>
                         </ul>
                     </li>
-                        
+
 
                         </li>
                     @else  {{-- Voor ingelogde gebruikers --}}
