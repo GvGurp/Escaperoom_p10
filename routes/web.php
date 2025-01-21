@@ -1,5 +1,8 @@
 <?php
 
+
+use App\Http\Controllers\GameController;
+use App\Http\Controllers\WordController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\navigationController;
@@ -20,15 +23,19 @@ Route::middleware(['admin'])->group(function () {
     Route::put('/admin/profile/update', [AdminController::class, 'update'])->name('admin.update');
 });
 
-Route::view('/', 'home')->name('home');
-Route::view('/home', 'home')->name('home');
-Route::get('admin/admin_home', [AdminController::class, 'index'])->name('admin_home');
-Route::get('player/player_home', [AdminController::class, 'index'])->name('player_home');
+//Routes for level1
+Route::get('/level1_woordcode', function () {
+    return view('level1_woordcode');
+})->name('level1.woordcode');
+Route::get('/popUp', function () {
+    return view('popUp');
+})->name('popUp');
 
 
 
-Route::post('/logout', [navigationController::class, 'logout'])->middleware('auth')->name('logout');
-Route::get('/login', [navigationController::class, 'login'])->name('login');
+Route::get('/end-game', [GameController::class, 'endGame'])->name('game.end');
+Route::post('/save-score', [GameController::class, 'saveScore'])->name('save.score');
+
 
 // Auth routes
 Auth::routes();
@@ -39,5 +46,6 @@ Route::get('player/level2_math_quiz', function () {
 });
 
 
-
 Route::post('/save-score', [ScoreController::class, 'saveScore'])->middleware('auth');
+>>>>>>>
+Level2(Rekenraadsel)
