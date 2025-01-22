@@ -50,10 +50,6 @@ Route::get('/level1_woordcode/nextWord', [GameController::class, 'nextWord'])->n
 Route::get('/end-game', [GameController::class, 'endGame'])->name('game.end');
 Route::post('/save-score', [GameController::class, 'saveScore'])->name('save.score');
 
-Route::get('/end-game', [GameController::class, 'endGame'])->name('game.end');
-Route::post('/save-score', [GameController::class, 'saveScore'])->name('save.score');
-
-
 // Auth routes
 Auth::routes();
 
@@ -63,4 +59,3 @@ Route::get('player/level2_math_quiz', function () {
 });
 
 
-Route::post('/save-score', [ScoreController::class, 'saveScore'])->middleware('auth');
