@@ -7,6 +7,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\navigationController;
 use App\Http\Controllers\ScoreController;
+use App\Http\Controllers\PlayerController;
 
 // Auth routes
 Auth::routes();
@@ -63,5 +64,3 @@ Route::get('player/level2_math_quiz', function () {
 
 
 Route::post('/save-score', [ScoreController::class, 'saveScore'])->middleware('auth');
->>>>>>>
-Level2(Rekenraadsel)
