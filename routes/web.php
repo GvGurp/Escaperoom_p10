@@ -3,6 +3,7 @@
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\navigationController;
+use App\Http\Controllers\MazeController;
 
 // Gebruikersroutes
 Route::middleware('auth')->group(function () {
@@ -31,3 +32,6 @@ Route::get('/login', [navigationController::class, 'login'])->name('login');
 
 // Auth routes
 Auth::routes();
+
+Route::get('/level3_maze',[MazeController::class, 'index'])->name('level3_maze');
+

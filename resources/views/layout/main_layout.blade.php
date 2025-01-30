@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Home</title>
-    <link rel="stylesheet" href="{{ asset('/css/main.css') }}">
+    {{-- <link rel="stylesheet" href="{{ asset('/css/main.css') }}"> --}}
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-[url(../public/images/blaadje.gif)] bg-cover bg-center h-screen">
