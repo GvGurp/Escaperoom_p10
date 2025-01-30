@@ -32,4 +32,17 @@ class ScoreController extends Controller
         // Example calculation: 1 point for each remaining second
         return $totalSeconds;
     }
+};
+
+
+public function up()
+{
+    Schema::create('scores', function (Blueprint $table) {
+        $table->id();
+        $table->unsignedBigInteger('user_id');
+        $table->unsignedInteger('level_id'); // Add level_id here
+        $table->integer('points');
+        $table->timestamps();
+    });
 }
+

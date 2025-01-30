@@ -63,4 +63,15 @@ Route::get('player/level2_math_quiz', function () {
 });
 
 
-Route::post('/save-score', [ScoreController::class, 'saveScore'])->middleware('auth');
+
+// In web.php
+
+//Route::post('/save-score', [ScoreController::class, 'saveScore']);
+
+
+Route::post('/save-score', [ScoreController::class, 'saveScore'])->name('save-score');
+Route::get('/game-rules', [GameController::class, 'rules'])->name('game.rules');
+Route::get('/game/start', [GameController::class, 'start'])->name('game.start');
+
+
+

@@ -1,6 +1,3 @@
-
-
-
 @extends('layout.main_layout')
 
 @section('content')
@@ -23,12 +20,7 @@
             <div class="ml-6">
                 <h2 class="text-2xl mt-4">Create an account to play ^_^</h2>
                 <h2 class="text-2xl mt-4">>>>>></h2>
-                <a href="{{ route('register') }}" class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
-                    Register
-                </a>
-                <a href="{{ route('login') }}" class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
-                    Log In
-                </a>
+
             </div>
         </div>
 

@@ -10,16 +10,14 @@
                     the journey isn’t easy.<br> The forest is full of challenges that only the bravest can overcome.
                 </h2>
                 <p class="mt-2">There are 3 levels of challenges. Complete them to progress!</p></div>
-            <div class="ml-6"><h2 class="text-2xl p-4 mt-4">create a account to play ^_^</h2>
+            <div class="ml-6 "><h2 class="text-2xl p-4 mt-4">create a account to play ^_^</h2>
 
-                <button
-                    class="bg-blue-900 text-white py-2 px-4 rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
-                    register
-                </button>
-                <button
-                    class="bg-blue-900 text-white py-2 px-4 rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
-                    log in
-                </button>
+                <a href="{{ route('register') }}" class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+                    Register
+                </a>
+                <a href="{{ route('login') }}" class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+                    Log In
+                </a>
             </div>
         </div>        <!-- 3 Separate Cards -->
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-8">            <!-- Card 1 -->
