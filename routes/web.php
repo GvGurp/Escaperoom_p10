@@ -8,6 +8,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\navigationController;
 use App\Http\Controllers\ScoreController;
 use App\Http\Controllers\PlayerController;
+use App\Http\Controllers\MazeScoreController;
 
 // Auth routes
 Auth::routes();
@@ -53,3 +54,7 @@ Route::post('/save-score', [GameController::class, 'saveScore'])->name('save.sco
 Route::get('player/level2_math_quiz', function () {
     return view('level2_math_quiz');
 });
+
+Route::get('/level3_maze',[MazeController::class, 'index'])->name('level3_maze');
+
+Route::post('/save-score', [MazeScoreController::class, 'store']);
