@@ -11,6 +11,7 @@
 
     <h1>Level 1</h1>
     <p>Form words from the given letters and complete this level.</p>
+    <p>Form words from the given hints and complete this level.</p>
     <div id="game-area">
         <!-- Game interactions will be loaded here -->
     </div>
@@ -38,7 +39,6 @@
             }).then((result) => {
                 if (result.isConfirmed) {
                     Swal.close();
-                    window.location.href = '{{ url('/level1_woordcode') }}';
                 }
             });
         }
