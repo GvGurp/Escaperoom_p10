@@ -23,6 +23,6 @@ class PlayerController extends Controller
      */
     public function index()
     {
-        return view('player_home');
+        return view('player/player_home');
     }
 }
