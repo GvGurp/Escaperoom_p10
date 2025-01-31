@@ -11,14 +11,18 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('player_progress', function (Blueprint $table) {
+        Schema::create('user_progress', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('users_id')->constrained()->onDelete('cascade');
-            $table->foreignId('levels_id')->constrained()->onDelete('cascade');
-            $table->integer('score')->default(0);
-            $table->boolean('completed')->default(false);
+            $table->foreignId('user_id')->constrained()->onDelete('cascade'); // References users table
+            $table->foreignId('level_id')->constrained()->onDelete('cascade'); // References levels table
+            $table->integer('score')->default(0); // Player's score
+            $table->boolean('completed')->default(false); // If the game is completed
+           
+            $table->integer('remainingTime')->default(60);
+            $table->integer('time_taken')->nullable(); // Time taken to complete the level
             $table->timestamps();
         });
+        
     }
 
     /**
@@ -26,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('player_progress');
+        Schema::dropIfExists('user_progress');
     }
 };

@@ -10,7 +10,7 @@
                 <!-- Email or Username -->
                 <div class="relative z-0 w-full mb-6 group">
                     <input id="login" type="text" name="login" value="{{ old('login') }}" required
-                           class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer @error('login') is-invalid @enderror"
+                           class="block py-2.5 px-0 w-full text-sm text-gray-200 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer @error('login') is-invalid @enderror"
                            placeholder=" " autofocus>
                     <label for="login"
                            class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
@@ -26,7 +26,7 @@
                 <!-- Password -->
                 <div class="relative z-0 w-full mb-6 group">
                     <input id="password" type="password" name="password" required
-                           class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer @error('password') is-invalid @enderror"
+                           class="block py-2.5 px-0 w-full text-sm text-gray-200 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer @error('password') is-invalid @enderror"
                            placeholder=" ">
                     <label for="password"
                            class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
@@ -56,7 +56,7 @@
                 <!-- Admin Code -->
                 <div class="relative z-0 w-full mb-6 group" id="admin-code-container" style="display: none;">
                     <input id="adminCode" type="text" name="adminCode"
-                           class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer @error('adminCode') is-invalid @enderror"
+                           class="block py-2.5 px-0 w-full text-sm text-gray-200 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer @error('adminCode') is-invalid @enderror"
                            placeholder=" ">
                     <label for="adminCode"
                            class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
@@ -73,7 +73,7 @@
                 <div class="flex items-center mb-6">
                     <input id="remember" type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}
                     class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 focus:ring-2">
-                    <label for="remember" class="ml-2 text-sm text-gray-900">
+                    <label for="remember" class="ml-2 text-sm text-gray-200">
                         {{ __('Remember Me') }}
                     </label>
                 </div>

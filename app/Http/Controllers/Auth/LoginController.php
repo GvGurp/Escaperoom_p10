@@ -11,7 +11,15 @@ class LoginController extends Controller
 {
     use AuthenticatesUsers;
 
-    protected $redirectTo = '/home';
+    protected function redirectTo()
+    {
+        // Check the role of the authenticated user
+        if (Auth::user()->role === 'user') {
+            return 'player/player_home'; // Redirect to admin home
+        }
+
+        return 'admin/admin_home'; // Redirect to player home
+    }
 
     public function __construct()
     {

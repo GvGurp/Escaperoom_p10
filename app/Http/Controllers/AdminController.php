@@ -1,12 +1,18 @@
 <?php
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
 {
+    public function recordPlayer()
+    {
+        $users = User::all();
+        return view('admin/admin_record_player',compact('users'));
+    }
 
     public function index()
     {
@@ -16,7 +22,7 @@ class AdminController extends Controller
     public function edit()
     {
         $admin = Auth::user();
-        return view('admin_edit', compact('admin'));
+        return view('admin/admin_edit', compact('admin'));
     }
 
     public function update(Request $request)
@@ -40,3 +46,4 @@ class AdminController extends Controller
         return back()->with('success', 'Accountgegevens succesvol bijgewerkt.');
     }
 }
+

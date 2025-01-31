@@ -1,20 +1,17 @@
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Home</title>
-    <link rel="stylesheet" href="{{ asset('/css/main.css') }}">
+    {{-- <link rel="stylesheet" href="{{ asset('/css/main.css') }}"> --}}
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-[url(../public/images/blaadje.gif)] bg-cover bg-center h-screen">
+<body class="bg-cover bg-center h-screen" style="background-image: url('{{ asset('images/blaadje.gif') }}');">
 <nav class="border-gray-200 bg-slate-800 dark:bg-gray-800 dark:border-gray-700">
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <a href="{{ route('home') }}" class="flex items-center space-x-3 rtl:space-x-reverse">
-            <img src="../public/images/brightened_escape_room_logo.jpg" class="h-8" alt="Logo" />
-            <span class="self-center text-2xl font-mono whitespace-nowrap dark:text-white">escaperoom</span>
+            <img src="{{ asset('images/logo.jpg') }}" class="h-12" alt="Logo" />
+            <span class="self-center text-2xl font-mono whitespace-nowrap text-white">escaperoom</span>
         </a>
         <button data-collapse-toggle="navbar-solid-bg" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-solid-bg" aria-expanded="false">
             <span class="sr-only">Open main menu</span>
@@ -51,10 +48,11 @@
                             Record
                         </button>
                         <ul class="absolute hidden mt-2 w-40 bg-gray-100 rounded shadow-lg p-2 dark:bg-gray-700 group-hover:block">
-                        <li>
-                            <a href="{{ url('player') }}" class="block py-2 px-3 md:p-0 text-slate-400 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white">Player</a>
-                        </li>
-                        <li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('admin.record-player') }}">Manage Players</a>
+                            </li>
+
+                            <li>
                             <a href="{{ url('score') }}" class="block py-2 px-3 md:p-0 text-slate-400 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white">Score</a>
                         </li>
                         </ul>
@@ -64,9 +62,9 @@
                         </li>
                     @else  {{-- Voor ingelogde gebruikers --}}
                     <li>
-                        <a href="{{ route('player_home') }}" class="block py-2 px-3 md:p-0 text-slate-400 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white">player Home</a>
+                        <a href="{{ route('player_home') }}" class="block py-2 px-3 md:p-0 text-slate-400 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white">Player Home</a>
                     <li class="relative group">
-                        <button class="block  md:p-0 text-slate-400 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white">
+                        <button class="block py-2 px-3 md:p-0 text-slate-400 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white">
                             Account
                         </button>
                         <ul class="absolute hidden mt-2 w-40 bg-gray-100 rounded shadow-lg p-2 dark:bg-gray-700 group-hover:block">
@@ -101,6 +99,7 @@
 <!-- Inhoud dat op de pagina komt te staan -->
 <div>
     @yield('content')
+    @stack('scripts')
 </div>
 
 

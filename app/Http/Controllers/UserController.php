@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
-    
+
    // Toon profielbewerken-pagina (Gaby)
 public function edit()
 {
@@ -15,7 +15,14 @@ public function edit()
     return view('player.edit', compact('user')); // Update de view naar de nieuwe locatie
 }
 
+    public function index()
+    {
+        // Haal alle gebruikers op
+        $users = User::all();
 
+        // Stuur de gebruikers naar de view
+//        return view('users.index', compact('users'));
+    }
 
     // Update profielinformatie (Gaby)
     public function update(Request $request)
