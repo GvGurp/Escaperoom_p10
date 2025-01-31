@@ -42,7 +42,14 @@ Route::get('/level1_woordcode', [GameController::class, 'index'])->name('game.in
 Route::post('/level1_woordcode/checkAnswer', [GameController::class, 'checkAnswer'])->name('game.checkAnswer');
 Route::get('/level1_woordcode/nextWord', [GameController::class, 'nextWord'])->name('game.nextWord');
 Route::get('/end-game', [GameController::class, 'endGame'])->name('game.end');
-Route::post('/save-score', [GameController::class, 'saveScore'])->name('save.score');
+
+// For GameController
+Route::post('/game/save-score', [GameController::class, 'saveScore'])->name('save.score');
+
+// For ScoreController
+Route::post('/score/save-score', [ScoreController::class, 'saveScore'])->name('save-score');
+
+
 
 Route::get('/player/level2_math_quiz', function () {
     return view('level2_math_quiz');
