@@ -18,7 +18,7 @@ Auth::routes();
 Route::view('/', 'home')->name('home');
 Route::view('/home', 'home')->name('home');
 Route::get('/admin/admin_home', [AdminController::class, 'index'])->name('admin_home');
-Route::get('/player/player_home', [AdminController::class, 'index'])->name('player_home');
+Route::get('/player/player_home', [PlayerController::class, 'index'])->name('player_home');
 Route::post('/logout', [navigationController::class, 'logout'])->middleware('auth')->name('logout');
 Route::get('/login', [navigationController::class, 'login'])->name('login');
 
