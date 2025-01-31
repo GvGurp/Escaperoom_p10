@@ -1,4 +1,4 @@
-@extends('layout.layout')
+@extends('layout.main_layout')
 
 @section('content')
 <main id="mainAccount" class="p-6 bg-gray-100 min-h-screen flex flex-col items-center">

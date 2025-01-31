@@ -16,7 +16,7 @@ class AdminController extends Controller
     public function edit()
     {
         $admin = Auth::user();
-        return view('admin_edit', compact('admin'));
+        return view('admin/admin_edit', compact('admin'));
     }
 
     public function update(Request $request)
