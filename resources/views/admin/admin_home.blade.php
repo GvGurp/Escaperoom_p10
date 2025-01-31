@@ -10,21 +10,19 @@
                     the journey isn’t easy.<br> The forest is full of challenges that only the bravest can overcome.
                 </h2>
                 <p class="mt-2">There are 3 levels of challenges. Complete them to progress!</p></div>
-            <div class="ml-6 "><h2 class="text-2xl p-4 mt-4">create a account to play ^_^</h2>
+            <div class="ml-6 "><h2 class="text-2xl p-4 mt-4">welcome ! ^_^</h2>
 
-                <a href="{{ route('register') }}" class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
-                    Register
-                </a>
-                <a href="{{ route('login') }}" class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
-                    Log In
-                </a>
+
             </div>
         </div>        <!-- 3 Separate Cards -->
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-8">            <!-- Card 1 -->
             <div class="bg-gray-800 text-white p-6 rounded-lg shadow-lg">
                 <img src="../../public/images/2a9e78cf-0c5d-4b4e-9b6f-5c24252320b2.jpg">
                 <h2 class="text-xl font-semibold">Level 1</h2>
-                <p> Solve a game of Hangman to unlock the path.</p></div>            <!-- Card 2 -->
+                <p> Solve a game of Hangman to unlock the path.</p>
+                <button onclick="window.location.href='{{ route('popUp') }}'">Start level 1 Game</button>
+            </div>
+            <!-- Card 2 -->
             <div class="bg-gray-800 text-white p-6 rounded-lg shadow-lg">
                 <img src="../../public/images/Schermafbeelding 2025-01-21 123131.png">
                 <h2 class="text-xl font-semibold">Level 2</h2>

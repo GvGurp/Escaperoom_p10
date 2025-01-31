@@ -51,7 +51,8 @@
     let gameTimer;
     let score = 0; // Placeholder for the score
     let totalValue = 0;
-    let level = 1;
+    let level = 1
+    ;
 
     const images = [
         { src: '../../public/images/apple.jpg', value: 1 },
@@ -172,6 +173,7 @@
 
     function saveScore(score, timeRemaining) {
         fetch('{{ route('save-score') }}', {
+
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
