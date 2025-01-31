@@ -30,7 +30,7 @@
                 <h2 class="text-xl font-semibold">Level 2</h2>
                 <p>Complete a math puzzle to continue forward<br> first complete level 2</p></div>            <!-- Card 3 -->
             <div class="bg-gray-800 text-white p-6 rounded-lg shadow-lg">
-                <div class="bg-gray-500 h-48 rounded-lg mb-4"></div>
+                <img src="../public/images/afbeelding.png">
                 <h2 class="text-xl font-semibold">Level 3</h2>
                 <p>Navigate through a maze to find the way out!<br> first complete level 2 and 3</p></div>
         </div>

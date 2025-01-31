@@ -37,7 +37,9 @@ Route::middleware(['admin'])->group(function () {
 });
 
 //Routes for level1
-Route::get('/popUp', function () { return view('popUp');})->name('popUp');
+Route::get('/popUp', function () {
+    return view('popUp');
+})->name('popUp');
 Route::get('/level1_woordcode', [GameController::class, 'index'])->name('game.index');
 Route::post('/level1_woordcode/checkAnswer', [GameController::class, 'checkAnswer'])->name('game.checkAnswer');
 Route::get('/level1_woordcode/nextWord', [GameController::class, 'nextWord'])->name('game.nextWord');
@@ -50,9 +52,18 @@ Route::post('/game/save-score', [GameController::class, 'saveScore'])->name('sav
 Route::post('/score/save-score', [ScoreController::class, 'saveScore'])->name('save-score');
 
 
-
 Route::get('/player/level2_math_quiz', function () {
     return view('level2_math_quiz');
 })->name('next-game');
 
 
+
+Route::get('/level3_maze',[MazeController::class, 'index'])->name('level3_maze');
+
+
+
+
+Route::get('/admin/record-player', [AdminController::class, 'recordPlayer'])
+    ->middleware('admin')
+    ->name('admin.record-player');
+Route::get('/admin/record_player', [UserController::class, 'index']);

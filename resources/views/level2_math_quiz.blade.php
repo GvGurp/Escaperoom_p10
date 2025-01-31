@@ -188,9 +188,21 @@
             .then(response => response.json())
             .then(data => {
                 if (data.success) {
-                    Swal.fire('<span class="text-white">Score saved successfully!</span>', '', 'success');
-                {{--.then(() => {--}}
-                {{--        window.location.href = '{{ route('/') }}';--}}
+                    // Show second popup after saving the score
+                    Swal.fire({
+                        title: 'Success!',
+                        html: `
+                                    <p>Your score has been saved.</p>
+                                    <div style="margin-top: 20px; display: flex; justify-content: center; gap: 10px;">
+
+
+                                    </div>
+                                `,
+                        icon: 'success',
+                    }).then(() => {
+                        window.location.href = '../level3_maze.blade.php'; // Replace with your desired page URL
+                    });
+
                 } else {
                     Swal.fire('<span class="text-white">Failed to save the score.</span>', '', 'error');
                 }
