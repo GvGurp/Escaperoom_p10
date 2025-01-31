@@ -10,6 +10,7 @@ use App\Http\Controllers\ScoreController;
 use App\Http\Controllers\PlayerController;
 use App\Http\Controllers\MazeScoreController;
 
+
 // Auth routes
 Auth::routes();
 
@@ -35,45 +36,16 @@ Route::middleware(['admin'])->group(function () {
     Route::put('/admin/profile/update', [AdminController::class, 'update'])->name('admin.update');
 });
 
-Route::get('/home/index', function(){
-    dd('lol');
-});
-
 //Routes for level1
 Route::get('/popUp', function () { return view('popUp');})->name('popUp');
-
 Route::get('/level1_woordcode', [GameController::class, 'index'])->name('game.index');
 Route::post('/level1_woordcode/checkAnswer', [GameController::class, 'checkAnswer'])->name('game.checkAnswer');
-Route::get('/next-game', [GameController::class, 'nextWord'])->name('next-game');
 Route::get('/level1_woordcode/nextWord', [GameController::class, 'nextWord'])->name('game.nextWord');
-
 Route::get('/end-game', [GameController::class, 'endGame'])->name('game.end');
-Route::post('/save-score', [ScoreController::class, 'saveScore'])->name('save.score');
+Route::post('/save-score', [GameController::class, 'saveScore'])->name('save.score');
 
-
-
-
-
-
-Route::get('player/level2_math_quiz', function () {
+Route::get('/player/level2_math_quiz', function () {
     return view('level2_math_quiz');
-});
-
-Route::get('/level3_maze',[MazeController::class, 'index'])->name('level3_maze');
-
-Route::post('/save-score', [ScoreController::class, 'saveScore'])->middleware('auth');
-
-// In web.php
-
-Route::post('/save-score', [ScoreController::class, 'saveScore']);
+})->name('next-game');
 
 
-Route::post('/save-score', [ScoreController::class, 'store'])->name('save-score');
-
-Route::post('/save-score', [ScoreController::class, 'saveScore'])->name('save-score');
-Route::get('/game-rules', [GameController::class, 'rules'])->name('game.rules');
-Route::get('/game/start', [GameController::class, 'start'])->name('game.start');
-
-
-
-//Route::post('/save-score', [MazeScoreController::class, 'store']);
